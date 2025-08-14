@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bible API App</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .verse-card {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      .loading-spinner {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">📖 Bible Reader</a>
+      </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <!-- Search Form -->
+          <div class="card p-4 mb-4">
+            <h4 class="mb-3 text-center">Find a Bible Verse</h4>
+            <form id="bible-form" class="row g-3">
+              <div class="col-md-8">
+                <input
+                  type="text"
+                  id="verse-input"
+                  class="form-control"
+                  placeholder="e.g., John 3:16"
+                  required
+                />
+              </div>
+              <div class="col-md-4 d-grid">
+                <button type="submit" class="btn btn-primary">Search</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Loading Spinner -->
+          <div class="text-center loading-spinner" id="loading-spinner">
+            <div class="spinner-border text-primary" role="status"></div>
+            <p class="mt-2">Loading verse...</p>
+          </div>
+
+          <!-- Result -->
+          <div id="result-container" class="mt-4"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
