@@ -6,6 +6,7 @@ let verseInput = document.querySelector("#verse-input");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
+  
   try {
     const inputVerse = verseInput.value.trim();
     if (!inputVerse) {
@@ -15,6 +16,7 @@ form.addEventListener("submit", async (e) => {
     loaderSpinner(true);
     const data = await fetchVerse(inputVerse);
     displayVerse(data);
+    verseInput.value = "";
   } catch (error) {
     console.error(error);
     showError("An error occurred while fetching the verse. Please try again.");

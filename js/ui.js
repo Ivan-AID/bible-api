@@ -1,5 +1,6 @@
 const resultContainer = document.querySelector("#result-container");
 const loadingSpinner = document.querySelector("#loading-spinner");
+const verseInput = document.querySelector("#verse-input");
 
 export function displayVerse(data) {
   resultContainer.innerHTML = `
@@ -19,3 +20,5 @@ export function showError(message) {
 export function loaderSpinner(isloading) {
   loadingSpinner.style.display = isloading ? "block" : "none";
 }
+
+
